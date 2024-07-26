@@ -1,5 +1,9 @@
+import { useContext } from "react";
+import MyContext from "../MyContext";
+
 const Contact = () => {
-    return <h1>Contact Me</h1>;
+  const {value1, value2} = useContext(MyContext);
+    return <h1>{value2}</h1>;
   };
   
   export default Contact;
