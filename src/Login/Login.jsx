@@ -43,21 +43,18 @@ function Login() {
           <label>or sign in with</label>
           <div className="login-other">
             <a
-              target="_blank"
               rel="noopener noreferrer"
               href="https://www.facebook.com/"
             >
               <img src={facebook} alt="facebook" rel="noopener noreferrer" />
             </a>
             <a
-              target="_blank"
               rel="noopener noreferrer"
               href="https://www.facebook.com/"
             >
               <img src={twitter} alt="twitter" rel="noopener noreferrer" />
             </a>
             <a
-              target="_blank"
               rel="noopener noreferrer"
               href="https://www.facebook.com/"
             >
