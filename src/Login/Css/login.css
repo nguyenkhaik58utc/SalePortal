@@ -1,5 +1,5 @@
 .container {
-  display: flex;
+  /* display: flex; */
   margin-top: 100px;
   max-width: 1140px;
   margin: 120px auto 0 auto;
@@ -8,11 +8,22 @@
 .container-left,
 .container-right {
   width: 50%;
+  float: right;
 }
-
+/* Use a media query to add a break point at 800px: */
+@media screen and (max-width: 800px) {
+  .container-left,
+.container-right {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+  .container-left {
+  float: none;
+}
+}
 .container-left img {
   width: 48px;
   height: 48px;
+  cursor: pointer;
 }
 .container-left .contents {
   width: 66.67%;
@@ -40,6 +51,9 @@ form #username, #password{
     border-radius: 0;
     background: transparent;
     border-bottom: 1px solid #ccc;
+}
+form #username:focus, #password:focus {
+  outline: none; /* Remove focus outline */
 }
 
 .form-bottom{

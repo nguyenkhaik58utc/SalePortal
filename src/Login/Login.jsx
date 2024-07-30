@@ -7,7 +7,10 @@ import "./Css/login.css";
 function Login() {
   return (
     <div className="container">
-      <div className="container-left col-md-6">
+      <div className="container-right">
+        <img src={imageRight} alt="image-right" />
+      </div>
+      <div className="container-left">
         <div className="contents">
           <p className="title">Sign In</p>
           <p className="title-description">
@@ -39,14 +42,17 @@ function Login() {
           </form>
           <label>or sign in with</label>
           <div className="login-other">
-            <img src={facebook} alt="facebook" />
-            <img src={twitter} alt="twitter" />
-            <img src={google} alt="google" />
+            <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+              <img src={facebook} alt="facebook" />
+            </a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+              <img src={twitter} alt="twitter" />
+            </a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+              <img src={google} alt="google" />
+            </a>
           </div>
         </div>
-      </div>
-      <div className="container-right  col-md-6">
-        <img src={imageRight} alt="image-right" />
       </div>
     </div>
   );
