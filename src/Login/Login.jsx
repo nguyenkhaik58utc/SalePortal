@@ -1,10 +1,41 @@
 import React from "react";
 import facebook from "./Images/icon-facebook.png";
+import { useForm } from "react-hook-form";
 import twitter from "./Images/icon-twitter.png";
 import google from "./Images/icon-google.png";
 import imageRight from "./Images/undraw_file_sync_ot38.svg";
 import "./Css/login.css";
 function Login() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    mode: "onSubmit"
+  });
+  const handleRegistration = (data) => console.log(data);
+  const handleError = (errors) => {};
+  const loginOptions = {
+    username: {
+      required: "Username is required",
+      pattern: {
+        value: /^[a-zA-Z\s]*$/,
+        message: 'Username must not contain numbers and special characters',
+      },
+      maxLength: {
+        value: 25,
+        message: "Username maximum 25 characters",
+      }
+    },
+    password: {
+      required : "Password is required",
+      minLength: {
+        value: 8,
+        message: "Password must have at lest 8 characters",
+      },
+    },
+  };
+
   return (
     <div className="container">
       <div className="container-right">
@@ -17,20 +48,27 @@ function Login() {
             Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur
             adipisicing.
           </p>
-          <form>
+          <form onSubmit={handleSubmit(handleRegistration, handleError)}>
             <input
               type="text"
               id="username"
               name="username"
               placeholder="Username"
+              {...register("username", loginOptions.username)}
             />
-            <br />
+            <small className="text-error">
+              {errors?.username && errors.username.message}
+            </small>
             <input
               type="password"
               id="password"
               name="password"
               placeholder="Password"
+              {...register("password", loginOptions.password)}
             />
+            <small className="text-error">
+              {errors?.password && errors.password.message}
+            </small>
             <div className="form-bottom">
               <div>
                 <input type="checkbox" id="remember" name="remember" />
