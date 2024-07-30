@@ -42,24 +42,9 @@ function Login() {
           </form>
           <label>or sign in with</label>
           <div className="login-other">
-            <a
-             
-              href="https://www.facebook.com/"
-            >
-              <img src={facebook} alt="facebook" />
-            </a>
-            <a
-             
-              href="https://www.facebook.com/"
-            >
-              <img src={twitter} alt="twitter" />
-            </a>
-            <a
-             
-              href="https://www.facebook.com/"
-            >
-              <img src={google} alt="google" />
-            </a>
+            <img src={facebook} alt="facebook" />
+            <img src={twitter} alt="twitter" />
+            <img src={google} alt="google" />
           </div>
         </div>
       </div>
