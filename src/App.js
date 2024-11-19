@@ -1,22 +1,17 @@
 
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Layout from './Router/Layout/Layout';
-import Home from './Router/Home/Home';
-import Blogs from './Router/Blogs/Blogs';
-import Contact from './Router/Contact/Contact';
-import NoPage from './Router/NoPage/NoPage';
+import Login from './Login/Login';
+import Question from './Exam/Question/Question';
+import ExamList from './Exam/Exam';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="blogs" element={<Blogs />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<NoPage />} />
-        </Route>
+        <Route path="/" element={<Login />}/>
+        <Route path="/exam" element={<ExamList />} />
+        <Route path="/exam/question" element={<Question />} />
       </Routes>
     </BrowserRouter>)
 }

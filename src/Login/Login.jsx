@@ -5,6 +5,9 @@ import twitter from "./Images/icon-twitter.png";
 import google from "./Images/icon-google.png";
 import imageRight from "./Images/undraw_file_sync_ot38.svg";
 import "./Css/login.css";
+import { useNavigate } from "react-router-dom";
+
+
 function Login() {
   const {
     register,
@@ -13,7 +16,11 @@ function Login() {
   } = useForm({
     mode: "onSubmit"
   });
-  const handleRegistration = (data) => console.log(data);
+  const navigate = useNavigate();
+
+  const handleRegistration = () => {
+    navigate("/exam"); 
+  };
   const handleError = (errors) => {};
   const loginOptions = {
     username: {
